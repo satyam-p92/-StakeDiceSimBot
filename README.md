@@ -1,4 +1,6 @@
 🎲 Dice Betting Bot for Telegram (Python)
+
+
 A feature-rich, modular Dice Betting Bot built in Python, designed to simulate and analyze various dice betting strategies directly via Telegram. This bot allows users to run simulations with customizable parameters, track performance, visualize profit progression, and receive detailed summaries—making it ideal for strategy testing, analysis, and learning.
 
 🚀 Features
