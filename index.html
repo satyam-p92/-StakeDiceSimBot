@@ -1,0 +1,42 @@
+<!-- templates/index.html -->
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>🎲 Dice Bot Dashboard</title>
+  <style>
+    body { font-family: sans-serif; padding: 20px; }
+    textarea { width: 100%; height: 300px; }
+  </style>
+</head>
+<body>
+  <h1>🎲 Dice Bot Web Dashboard</h1>
+  {% if not status.running %}
+  <form method="post">
+    <label>Strategy:</label>
+    <select name="strategy">
+      <option>martingale</option>
+      <option>paroli</option>
+      <option>flat</option>
+      <option>anti_martingale</option>
+    </select><br><br>
+
+    <label>Base Bet:</label>
+    <input name="base_bet" value="1.0"><br><br>
+
+    <label>Start Balance:</label>
+    <input name="start_balance" value="100.0"><br><br>
+
+    <label>Profit Target:</label>
+    <input name="profit_target" value="20.0"><br><br>
+
+    <button type="submit">▶ Start Bot</button>
+  </form>
+  {% else %}
+    <a href="/stop"><button>⏹ Stop Bot</button></a>
+  {% endif %}
+
+  <h2>📜 Log Output</h2>
+  <textarea readonly>{{ '\n'.join(status.logs) }}</textarea>
+</body>
+</html>
